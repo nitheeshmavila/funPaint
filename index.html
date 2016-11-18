@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title> fun paint app</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+	<div id="top">
+		<h1>fun paint</h1>
+		<div  id="left-side">
+			<h2> tools </h2>
+			<div id="brushes">
+				<h3>brushes</h3>
+				<img id="p1" src="./images/pencil.png" width="50" height="50"></img>
+				<img id="b2" src="./images/brush.png" width="50" height="50"></img>
+			</div>
+    			<div id="shapes">
+				<h4> shapes</h4>
+				<img id="line" src="./images/line.png" width="50" height="50"> </img>
+				<img id="rect" src="./images/rect.ico" width="50" height="50"> </img>
+        			<img id="circle" src="./images/circle.png" width="50" height="50"> </img>
+    			</div>
+			<div id ="fill">
+				<p><label>fill<input id="fillcolor" type="color"></label>
+                                <label>line<input id="strokecolor" type="color"></label></p>
+			</div>
+		</div>
+		<div id="menu">
+    			<button id="clear">Clear</button>
+			<button id="save" > Save</button>
+		</div>
+	</div>
+	<div id="canvasDiv">
+		<canvas id="canvas1" width="650" height="420"></canvas>
+	</div>
+	<script src="funpaint.js"></script>
+
+</body>
+</html>

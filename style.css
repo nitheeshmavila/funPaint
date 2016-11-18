@@ -1,0 +1,71 @@
+body {
+	background-image : url("./images/bg1.jpg");
+}
+
+#canvas1{
+	border: 5px solid #000000;
+    	background-color: white;
+    	border-color: deeppink;
+    	margin-left:7.5cm;
+    	margin-top: 4cm;
+}
+
+h1{
+	font-style: italic;
+    	font-size: -webkit-xxx-large;
+    	font-family: sans-serif;
+    	color: deeppink;
+	margin-left: 12cm;
+}
+
+h2,h3,h4 {
+	color: deeppink;
+}
+
+#brushes{
+
+    	border: 2px solid #E7DBDB;
+    	margin-top: 20px;
+    	margin-bottom: 20px;
+}
+
+#shapes {
+    	border: 2px solid #E7DBDB;
+    	margin-top: 20px;
+    	margin-bottom: 20px;
+}
+
+#left-side {
+        top:140px;
+        width:20%;
+        height:100%;
+        position:fixed;
+        background: #ffbbe9;
+}
+
+#top{
+       	position:fixed;
+       	top:0;
+       	left:0;
+       	width:100%;
+       	height:13%;
+       	text-align:center;
+       	background: #ffbbe9;      
+}
+
+#clear,#save {
+	color: deeppink;
+    	font-size: x-large;
+   	font-family: sans-serif;
+	background-color: #ffbbe9;
+}
+
+#fill {
+    	color: deeppink;
+    	font-size: larger;
+}
+
+#b1,#b2,#rect,#circle,#line {
+       display: -webkit-inline-box;
+}
+
