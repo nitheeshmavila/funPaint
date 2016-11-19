@@ -7,15 +7,25 @@
 	
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
-<body>
+<body>  
 	<div id="top">
-		<h1>fun paint</h1>
+		<input id="fillcolor" type="color">
+		<img src="./images/fillbucket.png" id="fillbucket"  width="40" height="40"></img>
+		<img src="./images/clear.png" id="clear" width="40" height="35"></img>
+                <img src="./images/save.png" id="save"  width="45" height="45" ></img>
 		<div  id="left-side">
-			<h2> tools </h2>
+			<h1> fun paint </h1>
 			<div id="brushes">
 				<h3>brushes</h3>
-				<img id="p1" src="./images/pencil.png" width="50" height="50"></img>
-				<img id="b2" src="./images/brush.png" width="50" height="50"></img>
+				<img id="b1" src="./images/brush.png" width="50" height="50"></img>
+				<input type="range" id="brushsize"> 
+				<input id="brushcolor" type="color">
+				
+				
+  				
+				
+
+				<p> size</p>
 			</div>
     			<div id="shapes">
 				<h4> shapes</h4>
@@ -23,18 +33,11 @@
 				<img id="rect" src="./images/rect.ico" width="50" height="50"> </img>
         			<img id="circle" src="./images/circle.png" width="50" height="50"> </img>
     			</div>
-			<div id ="fill">
-				<p><label>fill<input id="fillcolor" type="color"></label>
-                                <label>line<input id="strokecolor" type="color"></label></p>
-			</div>
-		</div>
-		<div id="menu">
-    			<button id="clear">Clear</button>
-			<button id="save" > Save</button>
+			
 		</div>
 	</div>
 	<div id="canvasDiv">
-		<canvas id="canvas1" width="650" height="420"></canvas>
+		<canvas id="canvas1" width="1170" height="560"></canvas>
 	</div>
 	<script src="funpaint.js"></script>
 
