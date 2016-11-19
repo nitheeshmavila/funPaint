@@ -26,7 +26,7 @@ var brush_draw = function()
 	{
 		down = false;
 	});
-	var draw = function()
+	var draw = function(e)
 	{
 		var brush_size = document.getElementById("brushsize").value;
 		var brush_color  = document.getElementById("brushcolor").value;
