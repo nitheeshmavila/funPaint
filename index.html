@@ -4,42 +4,33 @@
 <head>
 	<meta charset="UTF-8">
 	<title> fun paint app</title>
-	
 	<link rel="stylesheet" type="text/css" href="style.css"/>
 </head>
 <body>  
 	<div id="top">
+		fill
 		<input id="fillcolor" type="color">
-		<img src="./images/fillbucket.png" id="fillbucket"  width="40" height="40"></img>
-		<img src="./images/clear.png" id="clear" width="40" height="35"></img>
-                <img src="./images/save.png" id="save"  width="45" height="45" ></img>
+		brush size
+	        <input type="range" min="0.5" max="50"  step="1"id="linewidth"> 
+		line
+                <input id="brushcolor" type="color">
+                <input type="file" id="imagefile"  accept="image/*">Height                
+                <input type="range" min="200" max="1050"  step="50"  id="fileheight">Width                                         <input type="range" min="200" max="1050"  step="50"  id="filewidth">                    
 		<div  id="left-side">
-			<h1> fun paint </h1>
-			<div id="brushes">
-				<h3>brushes</h3>
-				<img id="b1" src="./images/brush.png" width="50" height="50"></img>
-				<input type="range" id="brushsize"> 
-				<input id="brushcolor" type="color">
-				
-				
-  				
-				
-
-				<p> size</p>
-			</div>
-    			<div id="shapes">
-				<h4> shapes</h4>
-				<img id="line" src="./images/line.png" width="50" height="50"> </img>
-				<img id="rect" src="./images/rect.ico" width="50" height="50"> </img>
-        			<img id="circle" src="./images/circle.png" width="50" height="50"> </img>
+			<h1> funpaint</h1>
+			<div id="Tools">
+				<img id="b1" src="./images/brush.png" width="38" height="38"></img>
+                		<img src="./images/fillbucket.png" id="fillbucket"  width="40" height="40"></img>
+				<img src="./images/clear.png" id="clear" width="40" height="35"></img>
+                		<img src="./images/save.png" id="save"  width="45" height="45" ></img>
     			</div>
 			
 		</div>
 	</div>
 	<div id="canvasDiv">
-		<canvas id="canvas1" width="1170" height="560"></canvas>
+		<canvas id="canvas1"></canvas>
 	</div>
 	<script src="funpaint.js"></script>
-
+	
 </body>
 </html>
