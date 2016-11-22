@@ -1,10 +1,10 @@
-var dragging = false;
-var canvas = document.getElementById("canvas1");
+var canvas = document.getElementById("canvas1"),
+    ctx = canvas.getContext("2d"),
+    dragging = false,
+    radius;
+
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
-var ctx = canvas.getContext("2d");
-var radius = 10;
-ctx.lineWidth = radius*2;
 
 var get_coordinates = function(e)
 {
@@ -17,9 +17,18 @@ var get_brush_color = function()
 	return color;
 }
 
+var get_radius = function()
+{
+	var radius = document.getElementById('linewidth').value;
+	return radius;	
+}
+
+
 var put_point = function(e)
-{	
-	var color = get_brush_color();
+{
+	var radius = get_radius(),
+	    color = get_brush_color();
+	ctx.lineWidth = radius * 2;
 	ctx.fillStyle = color;
 	ctx.strokeStyle = color;
 	if(dragging == true){
@@ -101,7 +110,10 @@ var main = function()
 	document.getElementById("imagefile").addEventListener("change",print_file_image);
 	document.getElementById("fillbucket").addEventListener("click",fill_canvas);
 	document.getElementById("clear").addEventListener("click",clear_canvas);
-	
+	document.getElementById("size_inc").addEventListener("click",clear_canvas);
+        document.getElementById("size_dec").addEventListener("click",clear_canvas);
+
+
 }
 
 window.addEventListener('load', main, false);
