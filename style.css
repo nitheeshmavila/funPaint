@@ -1,37 +1,16 @@
 
-#canvas1{
-    	margin-left:4.6cm;
-    	margin-top: 1.2cm;
-}
-
 h1{
 	font-style: italic;
-    	font-size: xx-large;
+    	font-size: large;
     	font-family: sans-serif;
     	color: black;
 	
 }
 
-h2,h3,h4 {
-	color: black;
-}
-
-#brushes{
-
-    	border: 2px solid #E7DBDB;
-    	margin-top: 20px;
-    	margin-bottom: 20px;
-}
-
-#shapes {
-    	border: 2px solid #E7DBDB;
-    	margin-top: 20px;
-    	margin-bottom: 20px;
-}
 
 #left-side {
         top: 0;
-    	width: 13.4%;
+    	width: 5%;
         height:100%;
         position:fixed;
         background: #a5a298;
@@ -45,13 +24,5 @@ h2,h3,h4 {
        	height:8%;
        	text-align:center;
        	background: #a5a298;      
-}
-
-
-#fillcolor {
-
-}
-#b1,#b2,#rect,#circle,#line {
-       display: -webkit-inline-box;
 }
 
