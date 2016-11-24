@@ -8,6 +8,8 @@
 </head>
 <body>  
 	<div id="top">
+		eraser size
+		<input type="range" min="2" max="50" value ="8" step="1" id="erasersize">
 		fill
 		<input id="fillcolor" type="color">
 		brush size
@@ -19,10 +21,17 @@
 		<div  id="left-side">
 			<h1> funpaint</h1>
 			<div id="Tools">
-				<img id="b1" src="./images/brush.png" width="38" height="38"></img>
-                		<img id="pencil" src="./images/pencil.png" width="38" height="38"></img>
+				<img id="b1" src="./images/brush.png" onclick="draw1(brush_draw);" width="38" height="38"></img>
+                		<img id="pencil" src="./images/pencil.png" width="38" height="38"onclick="draw1(pencil_draw);"></img>
+				 <img src="./images/line.png" id="line" width="35" height="36" onclick="draw2(line_draw);"></img>
+
+				<img src="./images/circleoutline.png" id="round" width="35" height="36" onclick="draw2(circle_draw);"></img>
+
 				<img src="./images/fillbucket.png" id="fillbucket"  width="40" height="40"></img>
-				
+				<img src="./images/circle.png" id="circle" width="35" height="36" onclick="draw1(filled_circle_draw);"></img>
+				 
+				<img src="./images/eraser.png" id="eraser" width="33" height="33" onclick="draw1(eraser);"></img>
+
 				<img src="./images/clear.png" id="clear" width="40" height="35"></img>
                 		<img src="./images/save.png" id="save"  width="45" height="45" ></img>
     			</div>
