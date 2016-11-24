@@ -1,5 +1,6 @@
 var canvas = document.getElementById("canvas1"),
-    ctx = canvas.getContext("2d");
+    ctx = canvas.getContext("2d"), 
+    dragging = false;
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
@@ -14,47 +15,52 @@ var get_brush_color = function()
 	return color;
 }
 
-var get_radius = function()
+var get_line_width = function()
 {
-	var radius = document.getElementById('linewidth').value;
-	return radius;	
+	var width = document.getElementById('linewidth').value;
+	return width;	
 }
 
 
-var put_point = function(e)
+var brush_draw = function(e)
 {
-	var radius = get_radius(),
-	    color = get_brush_color();
-	ctx.lineWidth = radius * 2;
+	var color = get_brush_color();
+	ctx.lineWidth = get_line_width();
 	ctx.fillStyle = color;
 	ctx.strokeStyle = color;
 	if(dragging == true){
-		ctx.lineTo(get_coordinates(e)['x'] , get_coordinates(e)['y']);
+		ctx.lineTo(get_coordinates(e)['x'] , get_coordinates(e)['y']);	
 		ctx.stroke();
-		ctx.beginPath();
-		ctx.arc(get_coordinates(e)['x'] , get_coordinates(e)['y'],  radius, 0, Math.PI*2);
-		ctx.fill();
-		ctx.beginPath();
-		ctx.moveTo(e.clientX, e.clientY);
 	}
 }
+
+var pencil_draw = function(e)
+{
+        ctx.lineWidth = 0.5;
+        if(dragging == true){
+                ctx.lineTo(get_coordinates(e)['x'] , get_coordinates(e)['y']);
+                ctx.stroke();
+
+        }
+}
+
 
 var engage_mouse = function(e)
 {
 	dragging = true;
-	put_point(e);
+	ctx.beginPath();
+	ctx.moveTo(get_coordinates(e)['x'] , get_coordinates(e)['y']);
 }
 
 var disengage_mouse = function()
 {
 	dragging = false;
-	ctx.beginPath();
 }
 
-var brush_draw = function()
+var draw = function(drawing_function)
 {
 	canvas.addEventListener('mousedown', engage_mouse);
-	canvas.addEventListener('mousemove', put_point);
+	canvas.addEventListener('mousemove', drawing_function);
 	canvas.addEventListener('mouseup', disengage_mouse);
 }
 
@@ -106,7 +112,8 @@ var save_image = function()
 }
 var main = function()
 {	
-	document.getElementById("b1").addEventListener("click", brush_draw);
+	document.getElementById("pencil").addEventListener("click", draw(pencil_draw));
+	document.getElementById("b1").addEventListener("click", draw(brush_draw));
         document.getElementById("save").addEventListener("click", save_image);
         document.getElementById("imagefile").addEventListener("change",print_file_image);
         document.getElementById("fillbucket").addEventListener("click",fill_canvas);
